@@ -221,7 +221,7 @@ fprintf('\n--- Processing Kaggle PVS Dataset ---\n');
 try
     % 1. IMPORT
     % The PVS dataset has a header row, so we use 'readtable'
-    % This might take 3-5 seconds because the file is big (75MB)
+    
     data_table = readtable('kaggle_data.csv');
     raw_data = table2array(data_table);
 
@@ -240,7 +240,7 @@ try
 
     % 4. RESAMPLE (Crucial for large files)
     % We only want 5 seconds of simulation (500 steps)
-    % The file probably has 100,000+ points. We crop it.
+    
     N_sim = 500; 
     
     % Create a time vector for the raw data
